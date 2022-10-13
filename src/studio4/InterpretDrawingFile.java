@@ -1,5 +1,6 @@
 package studio4;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -18,7 +19,55 @@ public class InterpretDrawingFile {
 		JFileChooser chooser = new JFileChooser("resources");
 		chooser.showOpenDialog(null);
 		File f = new File(chooser.getSelectedFile().getPath());
+		
 		Scanner in = new Scanner(f); //making Scanner with a File
+		
+		String shapeType = in.next();
+		int redComponent = in.nextInt();
+		int greenComponent = in.nextInt();
+		int blueComponent = in.nextInt();
+		boolean isFilled = in.nextBoolean();
+		
+		
+		//double x = in.nextDouble();
+		//double y = in.nextDouble();
+		//double halfWidth = in.nextDouble();
+		//double halfLength = in.nextDouble();
+		
+		
+		String rectangle= null;
+		String ellipse= null;
+		String triangle= null;
+		
+		
+		
+		StdDraw.setPenColor(redComponent, greenComponent, blueComponent);
+		
+		if(shapeType == rectangle)
+		double x = in.nextDouble();
+		double y = in.nextDouble();
+		double halfWidth = in.nextDouble();
+		double halfLength = in.nextDouble();
+			StdDraw.rectangle(x,y,halfWidth, halfLength);
+		
+		if(shapeType== ellipse)
+		double x = in.nextDouble();
+		double y = in.nextDouble();
+		double semiMajorAxis = in.nextDouble();
+		double semiMinorAxis = in.nextDouble();
+			StdDraw.ellipse(x, y, semiMajorAxis, semiMinorAxis);
+		
+		
+		//double parameterOne = in.nextDouble();
+		//double parameterTwo = in.nextDouble();
+		//double parameterThree = in.nextDouble();
+		//double parameterFour = in.nextDouble();
+		
+		
+		
+		
+		
+		
 		
 	}
 }
